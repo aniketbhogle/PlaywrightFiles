@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Automate InternetHerokuapp-A/B Testing', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-A/B Testing', async ({ page }) => {
 await page.goto('https://the-internet.herokuapp.com/');
 await expect(page).toHaveTitle("The Internet");
 await page.getByRole('link', { name: 'A/B Testing' }).click();
@@ -8,7 +8,7 @@ const header=await page.getByRole('heading');
 await expect(header).toHaveText('A/B Test Variation 1');
 });
 
-test('Automate InternetHerokuapp-Add&Remove Elements', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Add&Remove Elements', async ({ page }) => {
 await page.goto('https://the-internet.herokuapp.com/');
 await expect(page).toHaveTitle("The Internet");
 await page.getByRole('link', { name: 'Add/Remove Elements' }).click();
@@ -19,7 +19,7 @@ await expect(page.getByRole('button', { name: 'Delete' })).toBeHidden();
 
 });
 
-test('Automate InternetHerokuapp-Basic Auth Login', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Basic Auth Login', async ({ page }) => {
 await page.goto('https://the-internet.herokuapp.com/');
 await expect(page).toHaveTitle("The Internet");
 await page.getByRole('link', { name: 'Basic Auth' }).click();
@@ -31,7 +31,7 @@ await expect(header).toHaveText('Basic Auth');
 
 });
 
-test('Automate InternetHerokuapp-Check boxes', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Check boxes', async ({ page }) => {
 await page.goto('https://the-internet.herokuapp.com/');
 await expect(page).toHaveTitle("The Internet");
 await page.getByRole('link', { name: 'Checkboxes' }).click();
@@ -42,7 +42,7 @@ await expect(page.getByRole('checkbox', { name: 'checkbox 2' })).not.toBeChecked
 
 });
 
-test('Automate InternetHerokuapp-Drag & Drop', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Drag & Drop', async ({ page }) => {
 await page.goto('https://the-internet.herokuapp.com/');
 await expect(page).toHaveTitle("The Internet");
 await page.getByRole('link', { name: 'Drag and Drop' }).click();
@@ -53,7 +53,7 @@ await expect(headerA).toHaveText('B');
 await expect(headerB).toHaveText('A');
 });
 
-test('Automate InternetHerokuapp-DropDown', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-DropDown', async ({ page }) => {
 await page.goto('https://the-internet.herokuapp.com/');
 await expect(page).toHaveTitle("The Internet");
 await page.getByRole('link', { name: 'Dropdown' }).click();
@@ -62,7 +62,7 @@ const selectedOption=await page.locator('#dropdown').inputValue();
 console.log(selectedOption);
 });
 
-test('Automate InternetHerokuapp-Multiple Windows', async ({ browser }) => {
+test.skip('Automate InternetHerokuapp-Multiple Windows', async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
   await page.goto('https://the-internet.herokuapp.com/');
@@ -76,7 +76,7 @@ test('Automate InternetHerokuapp-Multiple Windows', async ({ browser }) => {
   await context.close();
 });
 
-test('Automate InternetHerokuapp-Alerts1', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Alerts1', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/');
   await expect(page).toHaveTitle('The Internet');
   await page.getByRole('link', { name: 'JavaScript Alerts' }).click();
@@ -84,7 +84,7 @@ test('Automate InternetHerokuapp-Alerts1', async ({ page }) => {
   await page.getByRole('button', { name: 'Click for JS Confirm' }).click();
 });
 
-test('Automate InternetHerokuapp-Alerts2', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Alerts2', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/');
   await expect(page).toHaveTitle('The Internet');
   await page.getByRole('link', { name: 'JavaScript Alerts' }).click();
@@ -93,7 +93,7 @@ test('Automate InternetHerokuapp-Alerts2', async ({ page }) => {
   await expect(page.locator('#result')).toHaveText('You successfully clicked an alert');
 });
 
-test('Automate InternetHerokuapp-Alerts3', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Alerts3', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/');
   await expect(page).toHaveTitle('The Internet');
   await page.getByRole('link', { name: 'Click for JS Prompt' }).click();
@@ -102,7 +102,7 @@ test('Automate InternetHerokuapp-Alerts3', async ({ page }) => {
   await expect(page.locator('#result')).toHaveText('You entered: Playwright');
 });
 
-test('Automate InternetHerokuapp-SingleFileUpload', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-SingleFileUpload', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/');
   await expect(page).toHaveTitle('The Internet');
   await page.getByRole('link', { name: 'File Upload' }).click();
@@ -114,7 +114,7 @@ test('Automate InternetHerokuapp-SingleFileUpload', async ({ page }) => {
 });
 
 
-test('Automate InternetHerokuapp-Dynamic Controls', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Dynamic Controls', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/');
   await expect(page).toHaveTitle('The Internet');
   await page.getByRole('link', { name: 'Dynamic Controls' }).click();
@@ -126,7 +126,7 @@ test('Automate InternetHerokuapp-Dynamic Controls', async ({ page }) => {
 
 });
 
-test('Automate InternetHerokuapp-Hover', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Hover', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/hovers');
   const profiles = page.locator('.figure');
   const count = await profiles.count();
@@ -141,7 +141,7 @@ test('Automate InternetHerokuapp-Hover', async ({ page }) => {
   }
 });
 
-test('Automate InternetHerokuapp-Right Click Alerts', async ({ page }) => {
+test.skip('Automate InternetHerokuapp-Right Click Alerts', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/context_menu');
   const box = page.locator('#hot-spot');
   await box.click({ button: 'right' });

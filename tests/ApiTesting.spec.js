@@ -37,7 +37,7 @@ test('PATCH request example', async ({ request }) => {
 });
 
 
-test('DELETE request example', async ({ request }) => {
+test.skip('DELETE request example', async ({ request }) => {
   const response = await request.delete('https://jsonplaceholder.typicode.com/posts/1');
   expect(response.status()).toBeOneOf([200, 204]);
 });

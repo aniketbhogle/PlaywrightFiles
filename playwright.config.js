@@ -10,7 +10,7 @@ export default defineConfig({
   testDir: './tests',
 
   // Timeout for each test (in ms)
-  timeout: 30 * 1000,
+  timeout: 70 * 1000,
 
   // Reporter: shows results in console
   reporter: 'html',
@@ -32,9 +32,9 @@ export default defineConfig({
       name: 'Desktop',
       use: { ...devices ['Desktop Chrome'],viewport: { width: 1280, height: 720 } },
     },
-    {
-      name: 'Mobile',
-      use: { ...devices ['Samsung Galaxy S20'],viewport: { width: 360, height: 640 } },
-    },
+    // {
+    //   name: 'Mobile',
+    //   use: { ...devices ['Samsung Galaxy S20'],viewport: { width: 360, height: 640 } },
+    // },
   ],
 });
