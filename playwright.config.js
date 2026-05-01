@@ -7,13 +7,16 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 export default defineConfig({
   // Folder where your test files are stored
-  testDir: './tests',
+  testDir: './TestCases',
 
   // Timeout for each test (in ms)
   timeout: 70 * 1000,
 
   // Reporter: shows results in console
-  reporter: 'html',
+  reporter: [
+    ['line'],
+    ['allure-playwright', { resultsDir: 'allure-results' }]
+  ],
 
   // Shared settings for all tests
   use: {
